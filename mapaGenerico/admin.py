@@ -1,3 +1,9 @@
 from django.contrib import admin
+from import_export.admin import ImportExportModelAdmin
 
-# Register your models here.
+from mapaGenerico.models import DatosGenerico
+
+
+@admin.register(DatosGenerico)
+class DatosAdmin(ImportExportModelAdmin):
+    pass
