@@ -12,12 +12,9 @@ from mapaGenerico.resources import DatosResource
 
 def upload(request):
     template = 'simple_upload.html'
-    prompt = {
-        'orden del csv debe ser: '
-    }
     context = {}
     if request.method == 'GET':
-        return render(request, template, context, prompt)
+        return render(request, template, context)
 
     csv_file = request.FILES['file']
 
@@ -25,7 +22,7 @@ def upload(request):
     if not csv_file.name.endswith('.csv'):
         messages.error(request, 'el fichero no es un csv')
     '''
-
+    print('name: ' + csv_file.name)
     data_set = csv_file.read().decode('UTF-8')
     io_string = io.StringIO(data_set)
     next(io_string)

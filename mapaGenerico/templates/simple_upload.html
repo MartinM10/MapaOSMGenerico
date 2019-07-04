@@ -3,16 +3,19 @@
 
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta charset="UTF-8">
-    <title>Sube un fichero CSV para obtener tu mapa</title>
+    <title>Upload</title>
 </head>
 <body>
+<h1>Sube un fichero con extensión .csv para obtener un mapa</h1>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="file">
     <p>Solo se aceptan ficheros con extension .csv</p>
     <button type="submit">Upload</button>
 </form>
+
 </body>
 </html>
 
