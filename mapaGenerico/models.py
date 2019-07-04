@@ -10,6 +10,7 @@ class DatosGenerico(models.Model):
 
     class Meta:
         ordering = ['nombre']
+        unique_together = ('nombre', 'latitud', 'longitud',)
 
     def __str__(self):
         return self.nombre
