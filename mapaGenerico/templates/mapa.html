@@ -1,0 +1,19 @@
+{% load leaflet_tags %}
+<html>
+<title>Mapa</title>
+<head>
+    {% leaflet_js %}
+    {% leaflet_css %}
+</head>
+<body>
+<h1>Datos</h1>
+{% leaflet_map "main" callback="main_map_init" %}
+
+<script type="text/javascript">
+    function main_map_init(map, options) {
+        L.marker([50.5, 30.5]).addTo(map);
+
+    }
+</script>
+</body>
+</html>

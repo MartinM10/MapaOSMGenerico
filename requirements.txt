@@ -1,3 +1,5 @@
 tablib
 Django
 django-import-export
+django-leaflet
+django-geojson

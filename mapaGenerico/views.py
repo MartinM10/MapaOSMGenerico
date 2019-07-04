@@ -35,3 +35,7 @@ def upload(request):
         )
     context = {}
     return render(request, template, context)
+
+
+def mapa(request):
+    return render(request, 'mapa.html', context={})

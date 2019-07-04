@@ -15,10 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from djgeojson.views import GeoJSONLayerView
 
-from mapaGenerico.views import upload
+from mapaGenerico.models import DatosGenerico
+from mapaGenerico.views import upload, mapa
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', upload)
+    path('', upload),
+    path('data.geojson', GeoJSONLayerView.as_view(model=DatosGenerico), name='data'),
+    path('mapa/', mapa),
+
 ]
